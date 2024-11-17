@@ -25,5 +25,35 @@ for file in os.listdir():
         width, height = image.size
         ratio_scale = width / height
 
-        # image conversion logic goes here
+        # Case 1: Square Image
+        if width == height: # 1:1 Ratio
+            if desired_width > desired_height: # Desired Ratio: 16:9
+                # space must be added to right and left
+                pass
+            elif desired_height > desired_width: # Desired Ratio: 9:16
+                # space must be added to the top and bottom
+                pass
+            else: # Desired Ratio: 1:1
+                # don't do anything
+                pass
+
+        # Case 2: Landscape Image
+        elif width > height: # 16:9 Ratio
+            if desired_ratio_scale > ratio_scale:
+                # space must be added to the right and left
+            elif desired_ratio_scale < ratio_scale:
+                # space must be added to the top and bottom
+            else:
+                # don't do anything
+                pass
+
+        # Case 3: Portrait Image 
+        else: # 9:16 Ratio
+            if desired_ratio_scale > ratio_scale:
+                # space must be added to the right and left
+            elif desired_ratio_scale < ratio_scale:
+                # space must be added to the top and bottom
+            else:
+                # don't do anything
+                pass
 
